@@ -4,8 +4,6 @@ import type { LightAuthProvider } from "@light-auth/core";
 
 const config = useRuntimeConfig();
 
-console.log("config:", config);
-
 const googleProvider: LightAuthProvider = {
   providerName: "google",
   arctic: new Google(
@@ -16,9 +14,7 @@ const googleProvider: LightAuthProvider = {
   searchParams: new Map([["access_type", "offline"]]),
 };
 
-console.log("googleProvider:", googleProvider.arctic);
-
-export const { handlers, signIn, signOut, getSession, getUser } =
+export const { handlers, signIn, signOut, getAuthSession, getUser } =
   CreateLightAuth({
     providers: [googleProvider],
   });

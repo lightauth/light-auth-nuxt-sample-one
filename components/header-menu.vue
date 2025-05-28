@@ -2,16 +2,16 @@
 import type { DropdownMenuItem } from "@nuxt/ui";
 import { CreateLightAuthClient } from "@light-auth/nuxt/client";
 
-const { signOut, useUser } = CreateLightAuthClient();
+const { signIn, useUser, signOut } = CreateLightAuthClient();
 
 const { data: user } = useUser();
 
 const items = ref<DropdownMenuItem[][]>([
   [
     {
-      label: user.value?.name || "Guest",
+      label: user?.value?.name || "Guest",
       avatar: {
-        src: user.value?.picture,
+        src: user?.value?.picture,
       },
       type: "label",
     },

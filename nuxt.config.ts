@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
     GoogleClientId: "", // can be overridden by NUXT_GOOGLE_CLIENT_ID environment variable
@@ -11,5 +10,8 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   image: {
     dir: "assets/images",
+  },
+  build: {
+    transpile: ["@light-auth/nuxt"],
   },
 });
