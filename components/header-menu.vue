@@ -2,8 +2,7 @@
 import type { DropdownMenuItem } from "@nuxt/ui";
 import { CreateLightAuthClient } from "@light-auth/nuxt/client";
 
-const { signIn, useUser, signOut } = CreateLightAuthClient();
-
+const { useUser, signOut } = CreateLightAuthClient();
 const { data: user } = useUser();
 
 const items = ref<DropdownMenuItem[][]>([
