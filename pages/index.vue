@@ -1,9 +1,6 @@
 <script setup lang="ts">
-// import type { LightAuthSession } from "@light-auth/core";
 import { CreateLightAuthClient } from "@light-auth/nuxt/client";
-const { useSession, useUser, signOut, signIn } = CreateLightAuthClient();
-
-
+const { useSession, useUser} = CreateLightAuthClient();
 const { data: session, refresh, status, pending, error } = useSession();
 const { data: user, refresh: refreshUser } = useUser();
 
